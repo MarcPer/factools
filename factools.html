@@ -1,14 +1,67 @@
-<head>
-  <title>factools</title>
-</head>
-
 <body>
-  <h1>Welcome to Meteor!</h1>
+	<section id="menu">
+	  <h1>Welcome to Factools!</h1>
 
-  {{> hello}}
+	  <ul>
+	  	{{#each types}}
+	  	  <li>{{name}}</li>
+  	  {{/each}}
+	  </ul>
+	  <hr>
+	  <h2>Languages</h2>
+	  <ul>
+	  	{{#each languages}}
+	  	  <li>{{name}}</li>
+  	  {{/each}}
+		</ul>
+		<!-- <form class="create-language">
+			<input type="text" name="name">
+			<button type="submit">Create</button>
+		</form> -->
+
+	</section>
+	<main id="entries">
+		<h1>Entries</h1>
+		<form class="create-entry">
+			<div class="entry-box">
+				<input type="text" placeholder="Title" name="title" id="entry-title" required>
+				<label for="entry-language" class="pull-right">Language</label>
+				<select name="language" class="language" id="entry-language" required>
+					{{#each languages}}
+						<option value="{{name}}">{{name}}</option>
+					{{/each}}
+				</select>
+				<label for="entry-type" class="pull-right">Type</label>
+				<select name="type" class="language" id="entry-type" required>
+					{{#each types}}
+						<option value="{{name}}">{{name}}</option>
+					{{/each}}
+				</select>
+
+
+				<textarea placeholder="Description" name="description" maxlength="90" required></textarea>
+				<input type="url" placeholder="url" name="url" id="entry-url" required>
+				<button type="submit" class="btn btn-primary pull-right">Create</button>
+			</div>
+		</form>
+		
+		{{#each entries}}
+			{{> entry}}
+		{{/each}}
+		
+	</main>  
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="entry">
+	<a href="{{url}}" target="_blank">
+		<div class="entry-box">
+			<span><h1>{{title}}</h1>
+				<span class="language">
+					<img src="{{langImage name=language}}" />
+				</span>
+			</span>
+			<p>{{description}}</p>
+			<button type="button" class="btn btn-danger delete-entry">&times;</button>
+		</div>
+	</a>
 </template>

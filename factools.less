@@ -1,0 +1,126 @@
+/* CSS declarations go here */
+html {
+	font-size: 16px;
+}
+
+html, body{
+	height: 100%;
+}
+
+body {
+	font-family: Georgia, serif;
+	font-size: 62.5%;
+}
+
+#menu {
+	overflow-y: auto;
+	width: 20%;
+	height: 100%;
+	float: left;
+	display: inline-block;
+	background-color: #BADA55;
+	padding: 0.5em 0.2em 0.5em 1em;
+
+	ul {
+		list-style-type: none;
+		
+		li {
+		font-size: 1.8em;
+			&:hover {
+				color: white;
+				cursor: pointer;
+			}
+		}
+
+	}
+}
+
+h1 {
+	font-size: 2.5em;
+}
+
+h2 {
+	font-size: 2em;
+}
+
+#entries {
+	width: 78%;
+	display: inline-block;
+	margin-left: 2%;
+	font-size: 2em;
+}
+
+form.create-entry {
+	font-size: 1em;
+
+	.entry-box {
+		width: 65.5%;
+		height: auto;
+		input, textarea {
+			padding-left: 0.3rem;
+			border: none;
+			box-shadow: none;
+			width: 70%;
+			margin: 0.5%;
+			&:focus {
+				border: none;
+				box-shadow: 0px 0px 6px blue;
+
+			}
+		}
+
+		select {
+			background-color: white;
+		}
+	}
+
+	#entry-title {
+		font-weight: bold;
+		font-size: 1.6em;
+	}
+
+	#entry-url {
+		color: blue;
+	}
+}
+
+.entry-box {
+	position: relative;
+	height: 170px;
+	margin: 2%;
+	border: 1px solid black;
+	display: inline-block;
+	width: 25%;
+	box-shadow: 3px 3px 6px #000;
+	padding: 0.5em;
+
+	h1 {
+		display: inline;
+		clear: left;
+		font-size: 1.6em;
+	}
+
+	p {
+		color: black;
+		font-size: 1em;
+		margin-top: 2%;
+	}
+
+	.language {
+		float: right;
+		img {
+			width: 50px;
+			height: auto;
+		}
+	}
+}
+
+a .entry-box:hover {
+	background-color: lightgray;
+}
+
+button.delete-entry {
+	position: absolute;
+  top: 77%;
+  left: 85%;
+}
