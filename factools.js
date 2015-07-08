@@ -14,7 +14,7 @@ var types = [
 if (Meteor.isClient) {
   Session.setDefault("selectedLanguage", "All");
   Session.setDefault("selectedType", "All");
-  // Meteor.subscribe("entries");
+  Meteor.subscribe("entries");
 
   Template.body.helpers({
     entries: function () {
