@@ -14,34 +14,33 @@
 	  	  <li>{{name}}</li>
   	  {{/each}}
 		</ul>
-		<!-- <form class="create-language">
-			<input type="text" name="name">
-			<button type="submit">Create</button>
-		</form> -->
 
 	</section>
 	<main id="entries">
-		<h1>Entries</h1>
 		<form class="create-entry">
 			<div class="entry-box">
-				<input type="text" placeholder="Title" name="title" id="entry-title" required>
-				<label for="entry-language" class="pull-right">Language</label>
-				<select name="language" class="language" id="entry-language" required>
-					{{#each languages}}
-						<option value="{{name}}">{{name}}</option>
-					{{/each}}
-				</select>
-				<label for="entry-type" class="pull-right">Type</label>
-				<select name="type" class="language" id="entry-type" required>
-					{{#each types}}
-						<option value="{{name}}">{{name}}</option>
-					{{/each}}
-				</select>
+				<div class="left-input">
+					<input type="text" placeholder="Title" name="title" id="entry-title" required>
+					<textarea placeholder="Description" name="description" maxlength="90" required></textarea>
+					<input type="url" placeholder="url" name="url" id="entry-url" required>
+				</div>
+				<div>
+					<p><label for="entry-language" >Language</label></p>
+					<p><select name="language" class="language" id="entry-language" required>
+						{{#each languages}}
+							<option value="{{name}}">{{name}}</option>
+						{{/each}}
+					</select></p>
 
 
-				<textarea placeholder="Description" name="description" maxlength="90" required></textarea>
-				<input type="url" placeholder="url" name="url" id="entry-url" required>
-				<button type="submit" class="btn btn-primary pull-right">Create</button>
+					<p><label for="entry-type" >Type</label></p>
+					<p><select name="type" class="language" id="entry-type" required>
+						{{#each types}}
+							<option value="{{name}}">{{name}}</option>
+						{{/each}}
+					</select></p>
+					<button type="submit" class="btn btn-primary pull-right">Create</button>
+				</div>
 			</div>
 		</form>
 		
@@ -57,7 +56,7 @@
 		<div class="entry-box">
 			<span><h1>{{title}}</h1>
 				<span class="language">
-					<img src="{{langImage name=language}}" />
+					<img class="pull-right" src="{{langImage name=language}}" />
 				</span>
 			</span>
 			<p>{{description}}</p>

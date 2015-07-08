@@ -1,6 +1,7 @@
 var langs = [
       {name: "MeteorJS", imageName: "meteor"},
       {name: "NodeJS", imageName: "nodejs"},
+      {name: "AngularJS", imageName: "angularjs"},
       {name: "JavaScript", imageName: "javascript"},
       {name: "Ruby/Rails", imageName: "ruby"}
   ];
