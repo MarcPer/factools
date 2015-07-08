@@ -14,6 +14,7 @@ var types = [
 if (Meteor.isClient) {
   Session.setDefault("selectedLanguage", "All");
   Session.setDefault("selectedType", "All");
+  // Meteor.subscribe("entries");
 
   Template.body.helpers({
     entries: function () {
@@ -27,32 +28,24 @@ if (Meteor.isClient) {
       if (lang !== undefined) {
         query["language"] = lang;
       }
-
       
       return Entries.find(query);
     },
 
     languages: langs,
     types: types
-
   });
 
   Template.body.events({
     "submit .create-entry": function(event) {
-      var title = event.target.title.value;
-      var description = event.target.description.value;
-      var type = event.target.type.value;
-      var language = event.target.language.value;
-      var url = event.target.url.value;
+      var entry = {title: event.target.title.value,
+        description: event.target.description.value,
+        type: event.target.type.value,
+        language: event.target.language.value,
+        url: event.target.url.value
+      }
 
-      Entries.insert({
-        title: title,
-        type: type,
-        description: description,
-        language: language,
-        url: url,
-        createdAt: new Date() // current time
-      });
+      Meteor.call("addEntry", entry);
 
       // Clear form
       event.target.title.value = "";
@@ -65,7 +58,7 @@ if (Meteor.isClient) {
     },
 
     "click .delete-entry": function() {
-      Entries.remove(this._id);
+      Meteor.call("deleteEntry", this._id);
       return false;
     },
 
@@ -140,4 +133,14 @@ UI.registerHelper('typeColor', function(options) {
       return types[i].colorClass;
     }
   } 
+});
+
+Meteor.methods({
+  addEntry: function (entry) {
+    entry.createdAt = new Date();
+    Entries.insert(entry);
+  },
+  deleteEntry: function (entryId) {
+    Entries.remove(entryId);
+  }
 });
