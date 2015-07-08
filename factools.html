@@ -3,15 +3,17 @@
 	  <h1>Welcome to Factools!</h1>
 
 	  <ul>
+  		<li class="filter-type {{isSelectedType name='All'}}">All</li>
 	  	{{#each types}}
-	  	  <li>{{name}}</li>
+	  	  <li class="filter-type {{isSelectedType name=name}}">{{name}}</li>
   	  {{/each}}
 	  </ul>
 	  <hr>
 	  <h2>Languages</h2>
 	  <ul>
+  		<li class="filter-language {{isSelectedLanguage name='All'}}">All</li>
 	  	{{#each languages}}
-	  	  <li>{{name}}</li>
+	  	  <li class="filter-language {{isSelectedLanguage name=name}}">{{name}}</li>
   	  {{/each}}
 		</ul>
 
@@ -53,7 +55,7 @@
 
 <template name="entry">
 	<a href="{{url}}" target="_blank">
-		<div class="entry-box">
+		<div class="entry-box {{typeColor type=type}}">
 			<span><h1>{{title}}</h1>
 				<span class="language">
 					<img class="pull-right" src="{{langImage name=language}}" />

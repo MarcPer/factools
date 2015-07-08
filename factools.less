@@ -6,16 +6,21 @@ html {
 body {
 	font-family: Georgia, serif;
 	font-size: 62.5%;
-	display: flex;
+}
+
+html, body {
+	height: 100%;
 }
 
 #menu {
-	flex: 1;
+	height: 100%;
+	.gradient(hsla(74, 64%, 59%, 1); hsla(74, 64%, 59%, 0.7));
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 	overflow-y: auto;
 	width: 20%;
-	float: left;
+	position:fixed;
 	display: inline-block;
-	background-color: #BADA55;
 	padding: 0.5em 0.2em 0.5em 1em;
 
 	ul {
@@ -42,9 +47,11 @@ h2 {
 
 #entries {
 	width: 78%;
+	position: absolute;
 	display: inline-block;
 	margin-left: 2%;
 	font-size: 2em;
+	left: 18%;
 }
 
 form.create-entry {
@@ -119,12 +126,48 @@ form.create-entry {
 	}
 }
 
-a .entry-box:hover {
-	background-color: lightgray;
-}
-
 button.delete-entry {
 	position: absolute;
   top: 77%;
   left: 85%;
+}
+
+.gradient(@color1; @color2) {
+	background: -webkit-linear-gradient(@color1, @color2); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(@color1, @color2); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(@color1, @color2); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(@color1, @color2); /* Standard syntax */
+}
+
+li.selected {
+	color: white;
+	background-color: brown;
+}
+
+@post-color: #E5FFDB;
+@lib-color: lavender;
+@service-color: #FDFFC3;
+
+.entry-box {
+	&.post {
+		background-color: @post-color;
+		&:hover {
+			background-color: darken(@post-color, 15%);
+			box-shadow: 3px 3px 10px darken(@post-color, 50%);
+		}
+	}
+	&.lib {
+		background-color: @lib-color;
+		&:hover {
+			background-color: darken(@lib-color, 15%);
+			box-shadow: 3px 3px 10px darken(@lib-color, 50%);
+		}
+	}
+	&.service {
+		background-color: @service-color;
+		&:hover {
+			background-color: darken(@service-color, 15%);
+			box-shadow: 3px 3px 10px darken(@service-color, 50%);
+		}
+	}
 }
