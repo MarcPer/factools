@@ -1,6 +1,7 @@
 Session.setDefault("selectedLanguage", "All");
 Session.setDefault("selectedType", "All");
 Meteor.subscribe("entries");
+Meteor.subscribe("userData");
 
 Template.body.helpers({
   entries: function () {
@@ -16,6 +17,17 @@ Template.body.helpers({
     }
     
     return Entries.find(query);
+  },
+
+  currentUserprofilePicture: function() {
+    var pictureUrl = Meteor.users.findOne({_id: Meteor.userId(), "services.google.picture": {$exists : true}},
+     {fields: {'services.google.picture': 1}});
+    if (pictureUrl) {
+      return pictureUrl.services.google.picture;
+    }
+
+    return "";
+
   },
 
   languages: langs,
@@ -43,12 +55,11 @@ Template.body.events({
     return false;
   },
 
-  "click .delete-entry": function() {
-    Meteor.call("deleteEntry", this._id);
-    return false;
-  },
-
   "click .filter-type": function(event) {
+    if (Meteor.userId()) {
+      console.log(Meteor.user());
+    }
+
     var type = event.target.innerHTML;
     if (type === 'All') {
       Session.set("type", undefined);

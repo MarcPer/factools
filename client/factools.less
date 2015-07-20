@@ -26,13 +26,16 @@ a:hover {
 	position:fixed;
 	display: inline-block;
 	padding: 0.5em 0.2em 0.5em 1em;
+	font-size: 2em;
 
 	h1 {
+		font-size: 1.5em;
 		color: brown;
 		font-weight: bold;
 	}
 
 	h2 {
+		font-size: 1.2em;
 		font-family: sans-serif;
 	}
 
@@ -41,7 +44,7 @@ a:hover {
 		list-style-type: none;
 		
 		li {
-		font-size: 1.8em;
+		font-size: 0.9em;
 			&:hover {
 				color: white;
 				cursor: pointer;
@@ -49,7 +52,17 @@ a:hover {
 		}
 
 	}
+
 }
+
+img.profile-picture {
+	width: 30%;
+	vertical-align: middle;
+	-webkit-clip-path: circle(34px at center);
+	clip-path: circle(34px at center);
+}
+
+
 
 h1 {
 	font-size: 2.5em;
@@ -112,6 +125,7 @@ form.create-entry {
 			background-color: white;
 			width: 100%;
 		}
+
 	}
 
 	#entry-title {
@@ -145,9 +159,11 @@ form.create-entry {
 
 	p {
 		color: black;
+		word-wrap: break-word;
 		font-size: 1em;
 		margin-top: 2%;
 		max-width: 75%;
+		max-height: 60%;
 		overflow: hidden;
 	}
 
@@ -157,6 +173,12 @@ form.create-entry {
 			width: 50px;
 			height: auto;
 		}
+	}
+
+	img.profile-picture {
+		position: absolute;
+		top: 63%;
+		left: -3%;
 	}
 }
 
