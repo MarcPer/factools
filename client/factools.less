@@ -3,7 +3,7 @@ body {
 }
 
 html, body {
-	height: 100%;
+	font-size: 1.2em;
 }
 
 nav {
@@ -22,7 +22,6 @@ nav {
 		
 		&:hover {
 			color: white;
-			cursor: pointer;
 		}
 	}
 }
@@ -30,10 +29,10 @@ nav {
 .nav-wrapper {
 	.gradient(hsla(74, 64%, 59%, 1); hsla(74, 64%, 59%, 0.7));
 
-	font-size: 1.5em;
+	font-size: 1.2em;
 
 	.brand-logo {
-		font-size: 2em;
+		font-size: 1.5em;
 		color: brown;
 		font-weight: bold;
 	}
@@ -46,59 +45,19 @@ img.profile-picture {
 	clip-path: circle(34px at center);
 }
 
-
-
 textarea {
 	resize: none;
-}
-
-form.create-entry {
-	font-size: 2em;
-
-	.entry-box {
-
-		input, textarea {
-			padding-left: 0.3rem;
-			border: none;
-			box-shadow: none;
-			margin: 0.5%;
-			&:focus {
-				border: none;
-				box-shadow: 0px 0px 6px blue;
-
-			}
-		}
-
-		select {
-			background-color: white;
-			width: 100%;
-		}
-
-	}
-
-	#entry-title {
-		font-weight: bold;
-		font-size: 1.5em;
-	}
-
-	#entry-url {
-		color: blue;
-	}
+	border: none;
 }
 
 .entry-box {
-	cursor: pointer;
 	position: relative;
 	height: 220px;
-	border: 1px solid black;
 	margin: 1%;
 	box-shadow: 3px 3px 6px #000;
 	padding: 0.5em;
-	vertical-align: top;
 
 	h1 {
-		display: inline;
-		clear: left;
 		word-wrap: break-word;
 		color: black;
 		font-size: 1.2em;
@@ -111,7 +70,7 @@ form.create-entry {
 		word-wrap: break-word;
 		font-size: 0.8em;
 		font-family: sans-serif;
-		margin-top: 2%;
+		margin-top: 1%;
 		max-width: 75%;
 		max-height: 60%;
 		overflow: hidden;
