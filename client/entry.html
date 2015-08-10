@@ -1,14 +1,16 @@
 <template name="entry">
-    <div class="entry-box {{typeColor type=type}}">
-  <a href="{{url}}" target="_blank">
-      <span><h1>{{title}}</h1>
-        <span class="language">
-          <img class="pull-right" src="{{langImage name=language}}" />
+  <div class="col-md-4">
+    <div class="entry-box {{typeColor type=type}}" >
+      <a href="{{url}}" target="_blank">
+        <span><h1>{{title}}</h1>
+          <span class="language">
+            <img class="pull-right" src="{{langImage name=language}}" />
+          </span>
         </span>
-      </span>
-      <p>{{description}}</p>
-      <img class="profile-picture" src="{{pictureUrl}}"/>
-      <button type="button" class="btn btn-danger delete-entry">&times;</button>
-  </a>
+        <p>{{description}}</p>
+        <img class="profile-picture" src="{{pictureUrl}}"/>
+        <button type="button" class="btn btn-danger delete-entry">&times;</button>
+      </a>
     </div>
+  </div>
 </template>
