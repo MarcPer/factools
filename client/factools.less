@@ -1,58 +1,42 @@
-html {
-	font-size: 16px;
-}
-
 body {
 	font-family: Georgia, serif;
-	font-size: 62.5%;
-	overflow-y: scroll;
 }
 
 html, body {
 	height: 100%;
 }
 
-a:hover {
-	text-decoration: none;
+nav {
+	a {
+		color: brown;
+		text-decoration: none !important;
+
+		&:hover {
+			text-decoration: none;
+			color: white;
+		}
+	}
+
+	ul li a {
+		color: brown;
+		
+		&:hover {
+			color: white;
+			cursor: pointer;
+		}
+	}
 }
 
-#menu {
-	height: 100%;
+.nav-wrapper {
 	.gradient(hsla(74, 64%, 59%, 1); hsla(74, 64%, 59%, 0.7));
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	overflow-y: auto;
-	width: 20%;
-	position:fixed;
-	display: inline-block;
-	padding: 0.5em 0.2em 0.5em 1em;
-	font-size: 2em;
 
-	h1 {
-		font-size: 1.5em;
+	font-size: 1.5em;
+
+	.brand-logo {
+		font-size: 2em;
 		color: brown;
 		font-weight: bold;
 	}
-
-	h2 {
-		font-size: 1.2em;
-		font-family: sans-serif;
-	}
-
-
-	ul {
-		list-style-type: none;
-		
-		li {
-		font-size: 0.9em;
-			&:hover {
-				color: white;
-				cursor: pointer;
-			}
-		}
-
-	}
-
 }
 
 img.profile-picture {
@@ -64,30 +48,12 @@ img.profile-picture {
 
 
 
-h1 {
-	font-size: 2.5em;
-}
-
-h2 {
-	font-size: 2em;
-}
-
-#entries {
-	width: 78%;
-	position: absolute;
-	display: inline-block;
-	margin-left: 2%;
-	font-size: 2em;
-	left: 18%;
-}
-
 textarea {
 	resize: none;
 }
 
 form.create-entry {
-	display: inline;
-	font-size: 1em;
+	font-size: 2em;
 
 	.entry-box {
 
@@ -95,7 +61,6 @@ form.create-entry {
 			padding-left: 0.3rem;
 			border: none;
 			box-shadow: none;
-			width: 95%;
 			margin: 0.5%;
 			&:focus {
 				border: none;
@@ -113,7 +78,7 @@ form.create-entry {
 
 	#entry-title {
 		font-weight: bold;
-		font-size: 1.6em;
+		font-size: 1.5em;
 	}
 
 	#entry-url {
@@ -174,10 +139,10 @@ button.delete-entry {
 }
 
 .gradient(@color1; @color2) {
-	background: -webkit-linear-gradient(@color1, @color2); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(@color1, @color2); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(@color1, @color2); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(@color1, @color2); /* Standard syntax */
+	background: -webkit-linear-gradient(90deg, @color1, @color2); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(90deg, @color1, @color2); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(90deg, @color1, @color2); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(90deg, @color1, @color2); /* Standard syntax */
 }
 
 li.selected {

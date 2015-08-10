@@ -1,74 +1,51 @@
 <body>
-	<section id="menu">
-	  <h1>Factools {{#if currentUser}}
-			<img class="profile-picture" src="{{currentUserprofilePicture}}"/>
-		{{/if}}</h1>
+  {{> navbar}}
 
-	  <h2>Types</h2>
-	  <ul>
-  		<li class="filter-type {{isSelectedType name='All'}}">All</li>
-	  	{{#each types}}
-	  	  <li class="filter-type {{isSelectedType name=name}}">{{name}}</li>
-  	  {{/each}}
-	  </ul>
-	  <h2>Languages</h2>
-	  <ul>
-  		<li class="filter-language {{isSelectedLanguage name='All'}}">All</li>
-	  	{{#each languages}}
-	  	  <li class="filter-language {{isSelectedLanguage name=name}}">{{name}}</li>
-  	  {{/each}}
-		</ul>
-
-		{{> loginButtons}}
-
-	</section>
+	
 	<main id="entries">
-	<div class="container-fluid">
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col m12">
 
 				<form class="create-entry">
 					<div class="entry-box">
-						<div class="container-fluid">
 
-							<div class="row">
-								<div class="col-md-9">
-									<input type="text" placeholder="Title" name="title" id="entry-title" autofocus required>
-								</div>
-								<div class="col-md-3">
-									<label for="entry-language" >Language</label>
-									<select name="language" class="language" id="entry-language" required>
-										{{#each languages}}
-											<option value="{{name}}">{{name}}</option>
-										{{/each}}
-									</select>
-								</div>
+						<div class="row">
+							<div class="col m9">
+								<input type="text" placeholder="Title" name="title" id="entry-title" autofocus required>
 							</div>
-
-							<div class="row">
-								<div class="col-md-9">
-									<textarea placeholder="Description" name="description" maxlength="90" required></textarea>
-								</div>
-								<div class="col-md-3">
-									<label for="entry-type" >Type</label>
-									<select name="type" class="language" id="entry-type" required>
-										{{#each types}}
-											<option value="{{name}}">{{name}}</option>
-										{{/each}}
-									</select>
-								</div>
+							<div class="col m3">
+								<label for="entry-language" >Language</label>
+								<select name="language" class="language" id="entry-language" required>
+									{{#each languages}}
+										<option value="{{name}}">{{name}}</option>
+									{{/each}}
+								</select>
 							</div>
-
-							<div class="row">
-								<div class="col-md-9">
-									<input type="url" placeholder="url" name="url" id="entry-url" required>
-								</div>
-								<div class="col-md-3">
-									<button type="submit" class="btn btn-primary">Create</button>
-								</div>
-							</div>
-
 						</div>
+
+						<div class="row">
+							<div class="col m9">
+								<textarea placeholder="Description" name="description" maxlength="90" required></textarea>
+							</div>
+							<div class="col m3">
+								<label for="entry-type" >Type</label>
+								<select name="type" class="language" id="entry-type" required>
+									{{#each types}}
+										<option value="{{name}}">{{name}}</option>
+									{{/each}}
+								</select>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col m9">
+								<input type="url" placeholder="url" name="url" id="entry-url" required>
+							</div>
+							<div class="col m3">
+								<button type="submit" class="btn btn-primary">Create</button>
+							</div>
+						</div>
+
 					</div>
 				</form>
 
@@ -80,7 +57,7 @@
 						{{> entry}}
 					{{/each}}
 				</div>
-			</div>
 		
 	</main>  
+	
 </body>

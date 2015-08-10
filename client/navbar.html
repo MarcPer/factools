@@ -1,0 +1,32 @@
+<template name="navbar">
+<ul id="dropdown-types" class="dropdown-content">
+  <li class="filter-type {{isSelectedType name='All'}}">All</li>
+  {{#each types}}
+    <li class="filter-type {{isSelectedType name=name}}">{{name}}</li>
+  {{/each}}
+</ul>
+
+<ul id="dropdown-languages" class="dropdown-content">
+  <li class="filter-language {{isSelectedLanguage name='All'}}">All</li>
+  {{#each languages}}
+    <li class="filter-language {{isSelectedLanguage name=name}}">{{name}}</li>
+  {{/each}}
+</ul>
+
+
+<div class="navbar-fixed">
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo">Factools</a>
+      <img class="profile-picture" src="{{currentUserprofilePicture}}"/>
+      <ul class="right hide-on-med-and-down">
+
+        <!-- Dropdown Trigger -->
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown-types">Types<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown-languages">Languages<i class="material-icons right">arrow_drop_down</i></a></li>
+      </ul>
+      {{> loginButtons}}
+    </div>
+  </nav>
+</div>
+</template>
